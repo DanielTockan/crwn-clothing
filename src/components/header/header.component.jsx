@@ -17,7 +17,7 @@ const Header = () => (
         CART
       </Link>
       <Link className="option" to="/">
-        CONTACT
+        SIGN IN
       </Link>
     </div>
   </div>
