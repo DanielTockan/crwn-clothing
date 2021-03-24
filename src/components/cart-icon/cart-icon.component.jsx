@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { createStructuredSelector } from 'reselect'
 
 import { toggleCartHidden } from '../../redux/cart/cart.actions'
 import { selectCartItemsCount } from '../../redux/cart/cart.selectors'
@@ -19,8 +20,8 @@ const CartIcon = ({ toggleCartHidden, itemCount }) => (
 // ! and the pulls off just a small section (a slice of that state). We are getting
 // ! the cart, and then the cartItem and then reducing the cartItems to get a new value
 // ! The new value is generated off of the state
-const mapStateToProps = state => ({
-  itemCount: selectCartItemsCount(state)
+const mapStateToProps = createStructuredSelector({
+  itemCount: selectCartItemsCount
 })
 
 const mapDispatchToProps = dispatch => ({
